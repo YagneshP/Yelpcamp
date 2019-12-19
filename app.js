@@ -17,9 +17,8 @@ var campgroundRoutes = require("./routes/campgrounds"),
 
 
 // connecting mongoose with database
-// var url=process.env.DATABASEURL || 'mongodb://localhost/yelp_camp';
-mongoose.connect( "mongodb+srv://YagneshP:webdevlopment32@cluster0-nq3pn.mongodb.net/test?retryWrites=true&w=majority"
- , {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}).then(()=>{
+var url=process.env.DATABASEURL || 'mongodb://localhost/yelp_camp';
+mongoose.connect( url, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}).then(()=>{
 		console.log("connected to DB");
 }).catch(err =>{
 	console.log("Error:", err.message);
